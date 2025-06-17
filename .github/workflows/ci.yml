@@ -117,4 +117,4 @@ jobs:
           package-name: ${{ matrix.package-name }}-static
           # when using GITHUB_TOKEN, no further workflows are triggered
           github-token-latest: ${{ secrets.GITHUB_TOKEN }}
-          github-token-release: ${{ secrets.ACTION_USER_TOKEN }}
+          github-token-release: ${{ secrets.GITHUB_TOKEN }}
