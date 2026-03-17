@@ -71,13 +71,6 @@ jobs:
             --title "Release $tag" \
             --notes "$relmsg"
 
-  publish-pypi:
-    needs: [build]
-    if: startsWith(github.ref, 'refs/tags/') && github.ref_name != 'latest'
-    uses: ./.github/workflows/pypi.yml
-    with:
-      publish: true
-
   build:
     needs: [update-latest]
     strategy:
