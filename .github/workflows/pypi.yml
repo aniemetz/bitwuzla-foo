@@ -3,9 +3,6 @@ name: Build & Publish Python Wheels
 # foo
 
 on:
-  push:
-    tags:
-      - '*'
   workflow_dispatch:
     inputs:
       publish:
@@ -82,9 +79,7 @@ jobs:
     name: Publish to PyPI
     needs: [build-sdist, build-wheels]
     runs-on: ubuntu-latest
-    if: >-
-      (github.event_name == 'push' && github.ref_name != 'latest')
-      || (github.event_name == 'workflow_dispatch' && inputs.publish)
+    if: inputs.publish
     environment: pypi
     permissions:
       id-token: write
