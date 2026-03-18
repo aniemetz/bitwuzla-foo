@@ -7,7 +7,8 @@ name = 'bitwuzla'
 dynamic = ['version']
 description = 'Bitwuzla Satisfiability Modulo Theories Solver'
 requires-python = '>= 3.7'
-license = {file = 'COPYING'}
+license = 'MIT'
+license_file = {file = 'COPYING'}
 authors = [
   {name = 'Aina Niemetz'},
   {name = 'Mathias Preiner'},
